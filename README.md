@@ -1,7 +1,5 @@
 # Smart-Placement-Portal
 
-## Overview
-
 The Smart Placement Portal is a web-based application developed to simplify and streamline the campus placement process. It provides a single platform where students, companies, and administrators can interact efficiently throughout the recruitment process.
 
 The portal enables students to build professional profiles, companies to post job opportunities and manage applicants, and administrators to monitor overall placement activities.
@@ -10,18 +8,18 @@ The portal enables students to build professional profiles, companies to post jo
 
 # Problem Statement
 
-###In many colleges, placement activities are managed manually or through multiple disconnected platforms. As a result:
+In many colleges, placement activities are managed manually or through multiple disconnected platforms. As a result:
 
 * Students spend significant time searching for suitable job opportunities.
 * Companies receive applications from candidates who may not meet the required skills or eligibility criteria.
 * Placement administrators find it difficult to monitor registrations, job postings, and application statuses efficiently.
-* There is no centralized platform to manage the complete placement workflow.###
+* There is no centralized platform to manage the complete placement workflow.
 
 ---
 
 # Solution
 
-###The Smart Placement Portal provides a centralized platform that connects students, companies, and administrators.
+The Smart Placement Portal provides a centralized platform that connects students, companies, and administrators.
 
 Students can create their profiles by adding academic details, technical skills, soft skills, aptitude level, languages, areas of interest, and resume links.
 
@@ -29,13 +27,13 @@ Companies can register, post job opportunities, specify eligibility criteria and
 
 Administrators can manage users, monitor job postings, and oversee the overall placement process.
 
-The portal also recommends jobs to students based on their profile and skills, helping them discover relevant opportunities more efficiently.###
+The portal also recommends jobs to students based on their profile and skills, helping them discover relevant opportunities more efficiently.
 
 ---
 
 # Key Features
 
-## Student Module
+### Student Module
 
 * Student Registration and Login
 * Profile Management
@@ -46,7 +44,7 @@ The portal also recommends jobs to students based on their profile and skills, h
 * Apply for Jobs
 * Track Application Status
 ---
-## Company Module
+### Company Module
 
 * Company Registration and Login
 * Company Profile Management
@@ -56,7 +54,7 @@ The portal also recommends jobs to students based on their profile and skills, h
 * Review Student Profiles
 * Accept or Reject Applications
 ---
-## Admin Module
+### Admin Module
 
 * Manage Students
 * Manage Companies
@@ -100,13 +98,12 @@ Unlike general job portals, the Smart Placement Portal is specifically designed 
 
 # Technologies Used
 
- | Frontend | Backend | Database |
- _________________________________
- | HTML | Node.js | MongoDB      |
- _________________________________
- | CSSS | Express.js | 
- _________________________________
- | Javascript |
+| Category | Technology |
+|----------|------------|
+| Frontend | HTML, CSS, JavaScript |
+| Backend | Node.js, Express.js |
+| Database | MongoDB |
+
  
  ---
 # Future Enhancements
