@@ -43,7 +43,7 @@ The portal also recommends jobs to students based on their profile and skills, h
 * **Skill-Based Job Recommendations**
 * Apply for Jobs
 * Track Application Status
----
+______________________________
 ### Company Module
 
 * Company Registration and Login
@@ -53,14 +53,14 @@ The portal also recommends jobs to students based on their profile and skills, h
 * View Applicants
 * Review Student Profiles
 * Accept or Reject Applications
----
+_________________________________
 ### Admin Module
 
 * Manage Students
 * Manage Companies
 * Monitor Job Postings
 * View Placement Activities
----
+   ---
 # Workflow
 
 1. Student registers and creates a complete profile.
