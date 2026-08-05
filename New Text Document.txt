@@ -1,0 +1,19 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+mongoose.connect('mongodb+srv://bharathi02072004_db_user:<db_password>@cluster0.7hdnrn9.mongodb.net/?appName=Cluster0')
+.then(() => console.log("MongoDB Connected"))
+.catch(err => console.log(err));
+
+app.get('/', (req, res) => {
+  res.send("Server Working");
+});
+
+app.listen(5000, () => {
+  console.log("Server running on port 5000");
+});

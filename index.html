@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Modern Smart Placement Portal for Universities and Companies"
+    />
+    <title>Smart Placement Portal</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo"><span class="logo-icon">🎓</span> EduPlace</div>
+        <ul class="nav-links" id="nav-links">
+          <!-- Links injected dynamically -->
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="app-container">
+      <!-- HOME VIEW  -->
+      <section id="view-home" class="view active">
+        <div class="hero">
+          <div class="hero-content">
+            <h1>Bridge the Gap Between Campus & Corporate</h1>
+            <p>
+              The smartest platform connecting top students with leading
+              companies seamlessly.
+            </p>
+            <div class="hero-buttons">
+              <button class="btn btn-primary" onclick="app.navigate('auth')">
+                Get Started
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="features">
+          <div class="feature-card">
+            <h3>For Students</h3>
+            <p>
+              Showcase your skills, track applications, and land your dream job
+              with ease.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>For Companies</h3>
+            <p>
+              Access verified student profiles, post jobs, and streamline your
+              hiring process.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!--AUTH VIEW -->
+      <section id="view-auth" class="view">
+        <div class="auth-container">
+          <div class="auth-card">
+            <div class="auth-tabs">
+              <button
+                class="auth-tab active"
+                id="tab-login"
+                onclick="authUI.switchTab('login')"
+              >
+                Login
+              </button>
+              <button
+                class="auth-tab"
+                id="tab-register"
+                onclick="authUI.switchTab('register')"
+              >
+                Register
+              </button>
+            </div>
+
+            <!-- Login Form -->
+            <form
+              id="form-login"
+              class="auth-form active"
+              onsubmit="authUI.handleLogin(event)"
+            >
+              <h2>Welcome Back</h2>
+              <div class="form-group">
+                <label>Role</label>
+                <select id="login-role" required>
+                  <option value="student">Student</option>
+                  <option value="company">Company</option>
+                  <option value="admin">Admin</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input
+                  type="email"
+                  id="login-email"
+                  required
+                  placeholder="you@example.com"
+                />
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input
+                  type="password"
+                  id="login-password"
+                  required
+                  placeholder="••••••••"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                Login
+              </button>
+            </form>
+
+            <!-- Register Form -->
+            <form
+              id="form-register"
+              class="auth-form"
+              onsubmit="authUI.handleRegister(event)"
+            >
+              <h2>Create Account</h2>
+              <div class="form-group">
+                <label>I am a...</label>
+                <select
+                  id="register-role"
+                  required
+                  onchange="authUI.handleRegisterRoleChange()"
+                >
+                  <option value="student">Student</option>
+                  <option value="company">Company</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label id="register-name-label">Full Name</label>
+                <input
+                  type="text"
+                  id="register-name"
+                  required
+                  placeholder="John Doe"
+                />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input
+                  type="email"
+                  id="register-email"
+                  required
+                  placeholder="you@email.com"
+                />
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input
+                  type="password"
+                  id="register-password"
+                  required
+                  minlength="6"
+                  placeholder="Create password"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                Register
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- STUDENT DASHBOARD -->
+      <section id="view-student" class="view">
+        <div class="dashboard-layout">
+          <aside class="sidebar">
+            <div class="profile-card">
+              <div class="avatar" id="student-avatar">S</div>
+              <h3 id="student-name-display">Name</h3>
+              <p id="student-email-display">Email</p>
+              <button
+                class="btn btn-outline btn-sm"
+                onclick="studentUI.showSection('profile')"
+              >
+                Edit Profile
+              </button>
+            </div>
+            <nav class="side-nav">
+              <button
+                class="side-nav-btn active"
+                onclick="studentUI.showSection('jobs')"
+              >
+                Available Jobs
+              </button>
+              <button
+                class="side-nav-btn"
+                onclick="studentUI.showSection('recommended-jobs')"
+              >
+                Recommended Jobs
+              </button>
+              <button
+                class="side-nav-btn"
+                onclick="studentUI.showSection('applications')"
+              >
+                My Applications
+              </button>
+            </nav>
+          </aside>
+          <div class="dashboard-content">
+            <!-- Student: Profile Edit -->
+            <div id="student-sec-profile" class="dashboard-section">
+              <h2>My Profile</h2>
+              <form
+                class="card-form"
+                id="student-profile-form"
+                onsubmit="studentUI.saveProfile(event)"
+              >
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Department</label>
+                    <input
+                      type="text"
+                      id="student-dept"
+                      placeholder="e.g. Computer Science"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>CGPA</label>
+                    <input
+                      type="number"
+                      step="0.01"
+                      id="student-cgpa"
+                      placeholder="0.0 - 4.0 or 10.0"
+                    />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Technical Skills (comma separated)</label>
+                    <input
+                      type="text"
+                      id="student-tech-skills"
+                      placeholder="HTML, CSS, JavaScript"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Soft Skills (comma separated)</label>
+                    <input
+                      type="text"
+                      id="student-soft-skills"
+                      placeholder="Communication, Teamwork"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Aptitude Level</label>
+                    <select id="student-aptitude" required>
+                      <option value="Beginner">Beginner</option>
+                      <option value="Intermediate">Intermediate</option>
+                      <option value="Advanced">Advanced</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Languages Known</label>
+                    <input
+                      type="text"
+                      id="student-languages"
+                      placeholder="English, Spanish"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Area of Interest</label>
+                  <input
+                    type="text"
+                    id="student-interest"
+                    placeholder="e.g. Web Development, Data Science"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Resume Link (URL)</label>
+                  <input
+                    type="url"
+                    id="student-resume"
+                    placeholder="https://drive.google.com/..."
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Save Profile
+                </button>
+              </form>
+            </div>
+
+            <!-- Student: Job Listings -->
+            <div id="student-sec-jobs" class="dashboard-section active">
+              <h2>Available Jobs</h2>
+              <div class="jobs-grid" id="student-jobs-container">
+                <!-- Injected by JS -->
+              </div>
+            </div>
+
+            <!-- Student: Recommended Jobs -->
+            <div id="student-sec-recommended-jobs" class="dashboard-section">
+              <h2>Recommended For You</h2>
+              <div class="jobs-grid" id="student-recommended-jobs-container">
+                <!-- Injected by JS -->
+              </div>
+            </div>
+
+            <!-- Student: Applications -->
+            <div id="student-sec-applications" class="dashboard-section">
+              <h2>My Applications</h2>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Company</th>
+                      <th>Role</th>
+                      <th>Applied On</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="student-applications-tbody">
+                    <!-- Injected by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--COMPANY DASHBOARD-->
+      <section id="view-company" class="view">
+        <div class="dashboard-layout">
+          <aside class="sidebar">
+            <div class="profile-card">
+              <div class="avatar" id="company-avatar">C</div>
+              <h3 id="company-name-display">Company</h3>
+              <p id="company-email-display">Email</p>
+            </div>
+            <nav class="side-nav">
+              <button
+                class="side-nav-btn active"
+                onclick="companyUI.showSection('post-job')"
+              >
+                Post Job
+              </button>
+              <button
+                class="side-nav-btn"
+                onclick="companyUI.showSection('my-jobs')"
+              >
+                Our Listings
+              </button>
+              <button
+                class="side-nav-btn"
+                onclick="companyUI.showSection('applicants')"
+              >
+                Applicants
+              </button>
+            </nav>
+          </aside>
+          <div class="dashboard-content">
+            <!-- Company: Post Job -->
+            <div id="company-sec-post-job" class="dashboard-section active">
+              <h2>Post a New Job</h2>
+              <form
+                class="card-form"
+                id="company-job-form"
+                onsubmit="companyUI.postJob(event)"
+              >
+                <div class="form-group">
+                  <label>Job Title</label>
+                  <input
+                    type="text"
+                    id="job-title"
+                    required
+                    placeholder="e.g. Software Engineer"
+                  />
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Location</label>
+                    <input
+                      type="text"
+                      id="job-location"
+                      required
+                      placeholder="e.g. Remote / New York"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Salary Package</label>
+                    <input
+                      type="text"
+                      id="job-salary"
+                      placeholder="e.g. $80,000 / year"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Required Skills (comma separated)</label>
+                  <input
+                    type="text"
+                    id="job-req-skills"
+                    required
+                    placeholder="e.g. HTML, CSS, JavaScript"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Eligibility Criteria</label>
+                  <input
+                    type="text"
+                    id="job-eligibility"
+                    required
+                    placeholder="e.g. Minimum 3.0 CGPA, Computer Science Major"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Job Description</label>
+                  <textarea id="job-desc" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Post Job</button>
+              </form>
+            </div>
+
+            <!-- Company: My Jobs -->
+            <div id="company-sec-my-jobs" class="dashboard-section">
+              <h2>Our Active Listings</h2>
+              <div class="jobs-grid" id="company-jobs-container">
+                <!-- Injected by JS -->
+              </div>
+            </div>
+
+            <!-- Company: Applicants -->
+            <div id="company-sec-applicants" class="dashboard-section">
+              <h2>Applicants</h2>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Applicant Name</th>
+                      <th>Job Role</th>
+                      <th>Details</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="company-applicants-tbody">
+                    <!-- Injected by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--ADMIN DASHBOARD -->
+      <section id="view-admin" class="view">
+        <div class="dashboard-admin">
+          <div class="admin-header">
+            <h2>Admin Control Panel</h2>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value" id="stat-students">0</div>
+              <div class="stat-label">Total Students</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="stat-companies">0</div>
+              <div class="stat-label">Total Companies</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="stat-jobs">0</div>
+              <div class="stat-label">Total Jobs</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="stat-apps">0</div>
+              <div class="stat-label">Total Applications</div>
+            </div>
+          </div>
+
+          <div class="admin-sections">
+            <div class="admin-panel card">
+              <h3>User Management</h3>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Role</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="admin-users-tbody">
+                    <!-- Injected by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="admin-panel card">
+              <h3>Job Management</h3>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Company</th>
+                      <th>Job Title</th>
+                      <th>Date Posted</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="admin-jobs-tbody">
+                    <!-- Injected by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Global Toast Notification -->
+    <div id="toast" class="toast">Message</div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+      async function register() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+
+        const response = await fetch("http://localhost:5000/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email }),
+        });
+
+        const result = await response.text();
+        alert(result);
+      }
+    </script>
+  </body>
+</html>
