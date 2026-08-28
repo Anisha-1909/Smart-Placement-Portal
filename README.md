@@ -5,7 +5,7 @@ The Smart Placement Portal is a web-based application developed to simplify and 
 The portal enables students to build professional profiles, companies to post job opportunities and manage applicants, and administrators to monitor overall placement activities.
 
 
- ###[Live Demo]: (https://anisha-1909.github.io/Smart-Placement-Portal/)
+ ### [Live Demo]: (https://anisha-1909.github.io/Smart-Placement-Portal/)
 ---
 
 # Problem Statement
