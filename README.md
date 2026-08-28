@@ -118,6 +118,4 @@ Unlike general job portals, the Smart Placement Portal is specifically designed 
   
 ---
 
-# Conclusion
-
 The Smart Placement Portal simplifies the campus recruitment process by providing a centralized and user-friendly platform for students, companies, and administrators. Its skill-based job recommendation approach helps students discover relevant opportunities while enabling companies to identify suitable candidates more efficiently, making the placement process faster, smarter, and more organized.
