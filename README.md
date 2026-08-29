@@ -33,11 +33,7 @@ The portal also recommends jobs to students based on their profile and skills, h
 
 ---
 
-### [view UI](screenshots/UI.png)
-
-### [view student dashboard](screenshots/student dashboard.png)
-
-### [view company dashboard](screenshots/company dashboard.png)
+### [view UI](screenshots/UI.png) | [view student dashboard](screenshots/studentdashboard.png) | [view company dashboard](screenshots/companydashboard.png)
 
 # Key Features
 
