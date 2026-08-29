@@ -33,6 +33,12 @@ The portal also recommends jobs to students based on their profile and skills, h
 
 ---
 
+### [view UI page]
+
+### [view student dashboard]
+
+### [view company dashboard]
+
 # Key Features
 
 ### Student Module
