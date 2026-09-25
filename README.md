@@ -107,16 +107,6 @@ Unlike general job portals, the Smart Placement Portal is specifically designed 
 | Frontend | HTML, CSS, JavaScript |
 | Backend | Node.js, Express.js |
 | Database | MongoDB |
-
- 
- ---
-# Future Enhancements
-
-* AI-powered Resume Analysis
-* Advanced Skill Gap Analysis
-* Email Notifications
-* Interview Scheduling
-* Placement Analytics Dashboard
   
 ---
 
