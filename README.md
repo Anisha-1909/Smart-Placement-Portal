@@ -100,6 +100,51 @@ Unlike general job portals, the Smart Placement Portal is specifically designed 
 
 ---
 
+### System Architecture
+
+                    ┌──────────────────────┐
+                    │      Students        │
+                    │   Register / Login   │
+                    │    Profile / Apply   │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+┌─────────────────────────────────────────────────────┐
+│                  Frontend Layer                     │
+│              HTML + CSS + JavaScript                │
+│                                                     │
+│  Login │ Profile │ Jobs │ Recommendations │ Apply  │
+└────────────────────────┬────────────────────────────┘
+                         │ HTTP Requests
+                         ▼
+┌─────────────────────────────────────────────────────┐
+│                  Backend Layer                      │
+│              Node.js + Express.js                  │
+│                                                     │
+│ Authentication │ Job Management │ Applications      │
+│ Recommendations │ Status Tracking │ Admin Controls  │
+└────────────────────────┬────────────────────────────┘
+                         │
+                         ▼
+┌─────────────────────────────────────────────────────┐
+│                    Database                         │
+│                    MongoDB                          │
+│                                                     │
+│ Users │ Student Profiles │ Companies │ Jobs         │
+│ Applications │ Application Status                   │
+└─────────────────────────────────────────────────────┘
+
+       ▲                              ▲
+       │                              │
+┌──────┴─────────┐          ┌────────┴──────────┐
+│    Companies   │          │      Admin        │
+│ Post Jobs      │          │ Monitor Users     │
+│ Review Apps    │          │ Jobs & Placements │
+│ Accept/Reject  │          │ Manage System     │
+└────────────────┘          └───────────────────┘
+
+---
+
 # Technologies Used
 
 | Category | Technology |
