@@ -64,8 +64,10 @@ The portal also recommends jobs to students based on their profile and skills, h
 * Manage Companies
 * Monitor Job Postings
 * View Placement Activities
+
 ---
-# Workflow
+
+# System Workflow
 
 1. Student registers and creates a complete profile.
 2. Company registers and posts job opportunities.
@@ -76,31 +78,10 @@ The portal also recommends jobs to students based on their profile and skills, h
 7. Companies accept or reject applicants.
 8. Students can track their application status.
 9. Admin monitors the overall placement process.
----
-
-# What Makes This Portal Different?
-
-Unlike general job portals, the Smart Placement Portal is specifically designed for campus recruitment.
-
-### General Job Portals
-
-* Built for all types of job seekers.
-* Students manually search through many job listings.
-* Less focus on campus placement requirements.
-* Recruitment process is spread across multiple systems.
-
-### Smart Placement Portal
-
-* Designed specifically for college placement activities.
-* Recommends jobs based on student skills and eligibility.
-* Connects Students, Companies, and Admin on one platform.
-* Simplifies the complete campus recruitment workflow.
-* Helps companies identify suitable candidates more efficiently.
-* Enables students to track their applications in one place.
 
 ---
 
-### System Architecture
+# System Architecture
 
                     ┌──────────────────────┐
                     │      Students        │
@@ -142,6 +123,28 @@ Unlike general job portals, the Smart Placement Portal is specifically designed 
 │ Review Apps    │          │ Jobs & Placements │
 │ Accept/Reject  │          │ Manage System     │
 └────────────────┘          └───────────────────┘
+
+---
+
+# What Makes This Portal Different?
+
+Unlike general job portals, the Smart Placement Portal is specifically designed for campus recruitment.
+
+### General Job Portals
+
+* Built for all types of job seekers.
+* Students manually search through many job listings.
+* Less focus on campus placement requirements.
+* Recruitment process is spread across multiple systems.
+
+### Smart Placement Portal
+
+* Designed specifically for college placement activities.
+* Recommends jobs based on student skills and eligibility.
+* Connects Students, Companies, and Admin on one platform.
+* Simplifies the complete campus recruitment workflow.
+* Helps companies identify suitable candidates more efficiently.
+* Enables students to track their applications in one place.
 
 ---
 
