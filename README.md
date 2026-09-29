@@ -19,15 +19,15 @@ In many colleges, placement activities are managed manually or through multiple 
 
 ---
 
-# Solution
+# Proposed System 
 
 The Smart Placement Portal provides a centralized platform that connects students, companies, and administrators.
 
-Students can create their profiles by adding academic details, technical skills, soft skills, aptitude level, languages, areas of interest, and resume links.
+ • Students can create their profiles by adding academic details, technical skills, soft skills, aptitude level, languages, areas of interest, and resume links.
 
-Companies can register, post job opportunities, specify eligibility criteria and required skills, review applications, and accept or reject candidates.
+ • Companies can register, post job opportunities, specify eligibility criteria and required skills, review applications, and accept or reject candidates.
 
-Administrators can manage users, monitor job postings, and oversee the overall placement process.
+ • Administrators can manage users, monitor job postings, and oversee the overall placement process.
 
 The portal also recommends jobs to students based on their profile and skills, helping them discover relevant opportunities more efficiently.
 
@@ -67,7 +67,7 @@ The portal also recommends jobs to students based on their profile and skills, h
 
 ---
 
-# System Workflow
+## System Workflow
 
 1. Student registers and creates a complete profile.
 2. Company registers and posts job opportunities.
