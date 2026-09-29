@@ -81,59 +81,6 @@ The portal also recommends jobs to students based on their profile and skills, h
 
 ---
 
- ## System Architecture 
-
-
-      SMART PLACEMENT PORTAL  ┌────────────┼────────────┐
-                              
-STUDENT      COMPANY         ADMIN
-└─────────────────────────┘
-               ↓
-                       ┌─────────────────────────┐
-│        FRONTEND LAYER        │
-│                              │
-│    HTML • CSS • JavaScript   │
-│                              │
-│    Login / Registration      │
-│    Student Profile           │
-│    Job Listings              │
-│    Recommendations           │
-│    Applications              │
-│    Dashboards                │
-                    └────────────┬────────────┘
-               
-            HTTP Requests
-                ↓
-                    ┌─────────────────────────┐
-│          BACKEND LAYER       │
-│                              │
-│      Node.js + Express.js    │
-│                              │
-│     Authentication           │
-│     User Management          │
-│     Job Management           │ 
-│     Skill Analysis           |
-│     Recommendations          │
-│     Application Management   │
-                   
-└────────────┬────────────┘
-                
-           Database Queries
-                ↓
-┌──────────────────────--─┐
-│           DATABASE LAYER     │
-│                              │
-│             MongoDB          │
-│                              │
-│      Users                   │
-│      Student Profiles        │
-│      Companies               │
-│      Jobs                    │
-│      Applications            │
-└──────────────────────-──┘
-
----
-
 # What Makes This Portal Different?
 
 Unlike general job portals, the Smart Placement Portal is specifically designed for campus recruitment.
