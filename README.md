@@ -81,7 +81,7 @@ The portal also recommends jobs to students based on their profile and skills, h
 
 ---
 
-## System Architecture 
+# System Architecture 
 
           Students|Companies|Admin
                     ↓
